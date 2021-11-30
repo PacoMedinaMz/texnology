@@ -1,0 +1,66 @@
+.carrouselst {
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  padding: 15px;
+  margin-top: 3%;
+  width: 60%;
+}
+
+
+.imgcarr {
+   border-radius: 10px;
+  border-bottom: 2px solid #47fff0;
+  width: 400px;
+  height: 480px;
+}
+
+.imgcard{
+    width: auto;
+    height: 200px;
+}
+
+.line{
+  border-top: 2px solid #47fff0;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  justify-content: center;
+}
+
+.cardst {
+  margin-left: 15%;
+  margin-right: 10%;
+  margin-top: 15px;
+  padding-bottom: 3%;
+}
+
+.card {
+  color: whitesmoke;
+  width: 90%;
+}
+
+.gray {
+  background-color: whitesmoke;
+  border-bottom: 2px solid #000000;
+  color: black;
+}
+
+.grayft {
+  background-color: rgb(206, 206, 206);
+  // border-bottom: 2px solid #47fff0;
+  color: black;
+}
+
+.botimg{
+    width: 250px;
+    height: 260px;
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px;
+}
+
+.botcard{
+    border-radius: 6px;
+    margin: 20px;
+}

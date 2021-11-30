@@ -1,0 +1,26 @@
+What is a paid chat?
+It’s a chat that contains at least one successful interaction between the user and the chatbot. You’ll never pay for spam chats.
+
+How many chatbots can I create?
+You can create as many chatbots as you need, but the number of active bots depends on your pricing plan.
+
+How can I get an invoice?
+We’ll email you an invoice at the provided email address after each successful payment.
+
+Can I use ChatBot on several websites?
+Yes, you can use your chatbots on multiple websites.
+
+What payment forms do you accept?
+We accept major credit cards including Visa, Mastercard, American Express, and Discover.
+
+Is there any contract required?
+No, there are no contracts or hidden fees. You can cancel anytime.
+
+What happens after my trial ends?
+You lose access to your ChatBot dashboard. However, your data and setup remain intact and safe. To log in to ChatBot again, you need to provide your credit card details.
+
+Do I need to provide my credit card details to register?
+We don’t require your credit card details to start your free trial. We’ll need them when your trial is over and you decide to upgrade to a paid plan. You can unsubscribe anytime.
+
+What is a Story?
+It’s a conversation scenario between the chatbot and your users. One Story can be assigned to multiple chatbots on your website and messaging platforms including Facebook Messenger, Slack, or LiveChat.

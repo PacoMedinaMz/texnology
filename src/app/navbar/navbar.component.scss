@@ -1,0 +1,31 @@
+nav {
+    padding: 5px;
+    text-align: center;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    background: #262626;
+  }
+  
+  nav a {
+    transition: 0.3s ease;
+    background: #262626;
+    font-size: 20px;
+    text-decoration: none;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    padding-left: 10px 0;
+    margin: 0 5px;
+    font-size: 17px;
+  }
+  nav a:hover {
+    border-top: 1px solid #47fff0;
+    border-bottom: 1px solid #47fff0;
+    padding: 6px 0; 
+  }
+
+.icono{
+  font-size: 25px;
+  color: #47fff0;
+  padding: 5px;
+  margin-right: 5px;
+  margin-left: 5px;
+}

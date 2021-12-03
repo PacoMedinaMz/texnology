@@ -1,0 +1,1 @@
+screen -dmS tex-api node index.js

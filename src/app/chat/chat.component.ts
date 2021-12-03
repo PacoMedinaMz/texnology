@@ -9,6 +9,7 @@ import io from 'socket.io-client';
 export class ChatComponent implements OnInit {
   mensajes: any;
   socket: any;
+  nombre: any;
 
   constructor() {
     let sock: any = io('https://api-tex.rmaafs.com/');
@@ -16,6 +17,10 @@ export class ChatComponent implements OnInit {
     //Al recibir algún mensaje...
     sock.on('messages', (msg: any) => {
       this.mensajes = msg;
+    });
+
+    sock.on('nombre', (msg: any) => {
+      this.nombre = msg;
     });
   }
 
@@ -35,7 +40,7 @@ export class ChatComponent implements OnInit {
     if (text.length <= 0) return;
     //Creamos el objeto que será enviado al socket.
     let msg = {
-      autor: 'X',
+      autor: 'Usuario ' + this.nombre,
       texto: text,
       fecha: getDateFormat(),
     };

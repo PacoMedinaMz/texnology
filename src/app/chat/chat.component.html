@@ -5,7 +5,12 @@
 
         <div class="chat">
             <div class="mensajes row">
-                <div class="msg yo">
+                <div *ngFor="let msg of mensajes" class="msg otro">
+                    <span class="autor">{{msg.autor}}:</span>
+                    <span class="mensaje">{{msg.texto}}</span>
+                    <span class="fecha">{{msg.fecha}}</span>
+                </div>
+                <!--<div class="msg yo">
                     <span class="autor">Autor:</span>
                     <span class="mensaje">Mensaje</span>
                     <span class="fecha">4:58 a.m</span>
@@ -14,7 +19,7 @@
                     <span class="autor">Autor:</span>
                     <span class="mensaje">Mensaje</span>
                     <span class="fecha">4:58 a.m</span>
-                </div>
+                </div>-->
             </div>
             <textarea placeholder="Tu mensaje..." id="text_area_msg"></textarea>
             <button class="btn-enviar" type="submit" (click)="handleOnClick()">Enviar</button>

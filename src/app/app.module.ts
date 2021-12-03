@@ -37,6 +37,7 @@ import { CrudComponent } from './crud/crud.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
 import { SigninempComponent } from './signinemp/signinemp.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MoreComponent,
     CrudComponent,
     IngresoComponent,
-    SigninempComponent
+    SigninempComponent,
+    ChatComponent
   ],
   imports: [
     RouterModule,

@@ -1,0 +1,28 @@
+<div class="chat-center">
+    <div class="chat-container">
+        <legend>¿Necesitas ayuda?</legend>
+        <span>Contamos son soporte en vivo las 24h del día.</span>
+
+        <div class="chat">
+            <div class="mensajes row">
+                <div *ngFor="let msg of mensajes" class="msg otro">
+                    <span class="autor">{{msg.autor}}:</span>
+                    <span class="mensaje">{{msg.texto}}</span>
+                    <span class="fecha">{{msg.fecha}}</span>
+                </div>
+                <!--<div class="msg yo">
+                    <span class="autor">Autor:</span>
+                    <span class="mensaje">Mensaje</span>
+                    <span class="fecha">4:58 a.m</span>
+                </div>
+                <div class="msg otro">
+                    <span class="autor">Autor:</span>
+                    <span class="mensaje">Mensaje</span>
+                    <span class="fecha">4:58 a.m</span>
+                </div>-->
+            </div>
+            <textarea placeholder="Tu mensaje..." id="text_area_msg"></textarea>
+            <button class="btn-enviar" type="submit" (click)="handleOnClick()">Enviar</button>
+        </div>
+    </div>
+</div>

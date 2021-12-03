@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { AcercaDeComponent } from './acerca-de/acerca-de.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +13,7 @@ import { MoreComponent } from './more/more.component';
 import { CrudComponent } from './crud/crud.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
 import { SigninempComponent } from './signinemp/signinemp.component';
+import { ChatComponent } from './chat/chat.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -22,23 +22,19 @@ export const routes: Routes = [
   { path: 'contacto', component: ContactoComponent },
   { path: 'footer', component: FooterComponent },
   { path: 'faq', component: FaqComponent },
-  { path: 'wok', component: WokComponent},
+  { path: 'wok', component: WokComponent },
   { path: 'signin', component: SigninComponent },
   { path: 'resetpass', component: ResetpassComponent },
   { path: 'more', component: MoreComponent },
   { path: 'crud', component: CrudComponent },
   { path: 'ingreso', component: IngresoComponent },
   { path: 'signinemp', component: SigninempComponent },
+  { path: 'soporte', component: ChatComponent },
   { path: '**', component: HomeComponent },
- 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-
-export class AppRoutingModule {
-
-  
- }
+export class AppRoutingModule {}

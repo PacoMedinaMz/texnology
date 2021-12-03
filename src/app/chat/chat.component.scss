@@ -26,6 +26,8 @@
 .chat .mensajes {
   padding-block: 30px;
   padding-inline: 20px;
+  max-height: 261px;
+  overflow-y: scroll;
 
   .autor {
     font-weight: bold;

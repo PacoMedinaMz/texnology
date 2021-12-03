@@ -1,0 +1,195 @@
+<div class="container">
+    <div class="container mt-3">
+        <div class="d-flex justify-content-center">
+            <h2 style="color: #fff;">CRUD - RECIBO</h2>
+        </div>
+        <table class="table table-dark table-hover">
+            <thead>
+                <tr style="text-align: center;">
+                    <th>Id</th>
+                    <th>Descripción</th>
+                    <th>Monto</th>
+                    <th>Pago</th>
+                    <th>Fecha</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="text-align: center;">
+                    <td>Datos</td>
+                    <td>Datos</td>
+                    <td>Datos</td>
+                    <td>Datos</td>
+                    <td>Datos</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <!-- OPCIONES -->
+    <div class="opciones">
+        <section id="featured-services " class="featured-services">
+            <div class="container" data-aos="fade-up">
+
+                <div class="row d-flex justify-content-center" style="margin-left: 3%;">
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" (click)="open(alta)">
+                        <div class="icon-box boton" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon "><i class="bx bxl-dribbble"></i></div>
+                            <h4 class="title"><a>ALTAS</a></h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" (click)="openb(baja)">
+                        <div class="icon-box boton" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title"><a>BAJAS</a></h4>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" (click)="openc(cambio)">
+                        <div class="icon-box boton" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon"><i class="bx bx-file"></i></div>
+                            <h4 class="title"><a>CAMBIOS</a></h4>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section><!-- End Featured Services Section -->
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-primary" routerLink="/crud">Regresar</button>
+    </div>
+    <br><br>
+</div> <!-- End div container -->
+
+<!-- MODALS -->
+
+<ng-template #alta let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Altas</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Dar de alta</p>
+
+        <form>
+            <!-- ID -->
+            <div class="mb-3">
+                <label for="ID" class="form-label">Id</label>
+                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+            </div>
+
+            <!-- DATO 1 -->
+            <div class="mb-3">
+                <label for="datouno" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="datouno" aria-describedby="dato">
+            </div>
+
+            <!-- DATO 2 -->
+            <div class="mb-3">
+                <label for="datodos" class="form-label">Monto
+                </label>
+                <input type="text" class="form-control" id="datodos">
+            </div>
+
+            <!-- DATO 3 -->
+            <div class="mb-3">
+                <label for="datotres" class="form-label">Pago
+                </label>
+                <input type="text" class="form-control" id="datotres">
+            </div>
+
+            <!-- DATO 4 -->
+            <div class="mb-3">
+                <label for="datocuatro" class="form-label">Fecha
+                </label>
+                <input type="text" class="form-control" id="datocuatro">
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
+    </div>
+</ng-template>
+
+<ng-template #baja let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Bajas</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Dar de baja</p>
+
+        <form>
+            <!-- ID -->
+            <div class="mb-3">
+                <label for="ID" class="form-label">Id</label>
+                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+            </div>
+
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Borrar</button>
+    </div>
+</ng-template>
+
+<ng-template #cambio let-c="close" let-d="dismiss">
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">Cambios</h4>
+        <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Cambios en los datos</p>
+
+        <form>
+            <!-- ID -->
+            <div class="mb-3">
+                <label for="ID" class="form-label">Id</label>
+                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+            </div>
+
+            <!-- DATO 1 -->
+            <div class="mb-3">
+                <label for="datouno" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="datouno" aria-describedby="dato">
+            </div>
+
+            <!-- DATO 2 -->
+            <div class="mb-3">
+                <label for="datodos" class="form-label">Monto
+                </label>
+                <input type="text" class="form-control" id="datodos">
+            </div>
+
+            <!-- DATO 3 -->
+            <div class="mb-3">
+                <label for="datotres" class="form-label">Pago
+                </label>
+                <input type="text" class="form-control" id="datotres">
+            </div>
+
+            <!-- DATO 4 -->
+            <div class="mb-3">
+                <label for="datocuatro" class="form-label">Fecha
+                </label>
+                <input type="text" class="form-control" id="datocuatro">
+            </div>
+        </form>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cambiar</button>
+    </div>
+
+</ng-template>

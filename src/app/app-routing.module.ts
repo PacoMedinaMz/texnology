@@ -14,6 +14,18 @@ import { CrudComponent } from './crud/crud.component';
 import { IngresoComponent } from './ingreso/ingreso.component';
 import { SigninempComponent } from './signinemp/signinemp.component';
 import { ChatComponent } from './chat/chat.component';
+import { CrudcontratoComponent } from './cruds/crudcontrato/crudcontrato.component';
+import { CrudconvenioComponent } from './cruds/crudconvenio/crudconvenio.component';
+import { CruddatosComponent } from './cruds/cruddatos/cruddatos.component';
+import { CrudempleadoComponent } from './cruds/crudempleado/crudempleado.component';
+import { CrudpagoComponent } from './cruds/crudpago/crudpago.component';
+import { CrudpaqueteComponent } from './cruds/crudpaquete/crudpaquete.component';
+import { CrudpuestoComponent } from './cruds/crudpuesto/crudpuesto.component';
+import { CrudreciboComponent } from './cruds/crudrecibo/crudrecibo.component';
+import { CrudreunionComponent } from './cruds/crudreunion/crudreunion.component';
+import { CrudrobotComponent } from './cruds/crudrobot/crudrobot.component';
+import { CrudtareasComponent } from './cruds/crudtareas/crudtareas.component';
+import { CrudusuarioComponent } from './cruds/crudusuario/crudusuario.component';
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -30,6 +42,18 @@ export const routes: Routes = [
   { path: 'ingreso', component: IngresoComponent },
   { path: 'signinemp', component: SigninempComponent },
   { path: 'soporte', component: ChatComponent },
+  { path: 'crudcontrato', component: CrudcontratoComponent},
+  { path: 'crudconvenio', component: CrudconvenioComponent},
+  { path: 'cruddatos', component: CruddatosComponent},
+  { path: 'crudempleado', component: CrudempleadoComponent},
+  { path: 'crudpago', component: CrudpagoComponent},
+  { path: 'crudpaquete', component: CrudpaqueteComponent},
+  { path: 'crudpuesto', component: CrudpuestoComponent},
+  { path: 'crudrecibo', component: CrudreciboComponent},
+  { path: 'crudreunion', component: CrudreunionComponent},
+  { path: 'crudrobot', component: CrudrobotComponent},
+  { path: 'crudtareas', component: CrudtareasComponent},
+  { path: 'crudusuario', component: CrudusuarioComponent},
   { path: '**', component: HomeComponent },
 ];
 

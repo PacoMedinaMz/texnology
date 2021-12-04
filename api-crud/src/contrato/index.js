@@ -3,13 +3,12 @@ const mongoose = require("../../database");
 const { ObjectID } = require("mongodb");
 const app = express.Router();
 
-const Model = mongoose.model("Pago", {
-  Monto: Number,
-  Fecha: Date,
-  Concepto: String,
-  Banco: String,
-  Cuenta: String,
-  IdContrato: String,
+const Model = mongoose.model("Contrato", {
+  FechaInicio: Date,
+  FechaFinal: Date,
+  Clausulas: Array,
+  Estado: String,
+  IdEmpleado: String,
 });
 
 app.get("/", (req, res) => {

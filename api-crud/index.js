@@ -12,6 +12,17 @@ app.get("/", (req, res) => {
 });
 
 app.use("/pago", require("./src/pago"));
+app.use("/contrato", require("./src/contrato"));
+app.use("/empleado", require("./src/empleado"));
+app.use("/puesto", require("./src/puesto"));
+app.use("/reunion", require("./src/reunion"));
+app.use("/tareas", require("./src/tareas"));
+app.use("/datos", require("./src/datos"));
+app.use("/robot", require("./src/robot"));
+app.use("/usuario", require("./src/usuario"));
+app.use("/convenio", require("./src/convenio"));
+app.use("/recibo", require("./src/recibo"));
+app.use("/paquete", require("./src/paquete"));
 
 app.listen(port, () => {
   console.log("Escuchando en el puerto " + port);

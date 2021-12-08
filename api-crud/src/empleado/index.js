@@ -86,4 +86,24 @@ app.delete("/:id", (req, res) => {
     });
 });
 
+/**
+ * Endpoint para iniciar sesión
+ */
+app.post("/login", (req, res) => {
+  const correo = req.body.correo || "";
+  const password = req.body.password || "";
+
+  Model.find({ Correo: correo, Password: password })
+    .then((data) => {
+      if (data.length === 1) {
+        res.json(data[0]);
+      } else {
+        res.status(404).json({ error: "Credenciales incorrectas." });
+      }
+    })
+    .catch((err) => {
+      res.status(400).json({ error: err.message });
+    });
+});
+
 module.exports = app;

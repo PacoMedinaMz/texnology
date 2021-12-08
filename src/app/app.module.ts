@@ -38,6 +38,7 @@ import { IngresoComponent } from './ingreso/ingreso.component';
 import { SigninempComponent } from './signinemp/signinemp.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChatComponent } from './chat/chat.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { ChatComponent } from './chat/chat.component';
     CrudComponent,
     IngresoComponent,
     SigninempComponent,
-    ChatComponent
+    ChatComponent,
   ],
   imports: [
     RouterModule,
@@ -78,8 +79,10 @@ import { ChatComponent } from './chat/chat.component';
     MdbValidationModule,
     AppRoutingModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

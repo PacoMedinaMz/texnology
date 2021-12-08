@@ -1,25 +1,25 @@
 <div class="wrapper fadeInDown">
-    <div id="formContent">
-      <!-- Tabs Titles -->
-      
-      <h6 class="d-flex justify-content-center title">Usuario</h6>
-  
-      <!-- Icon -->
-      <div class="fadeIn first">
-        <i class="fas fa-user icon icono"></i>
-      </div>
-  
-      <!-- Login Form -->
-      <form>
-        <input type="text" id="login" class="fadeIn second" name="login" placeholder="Usuario">
-        <input type="text" id="password" class="fadeIn third" name="login" placeholder="Contraseña">
-        <input type="submit" class="fadeIn fourth" value="Ingresar">
-      </form>
-  
-      <!-- Remind Passowrd -->
-      <div id="formFooter">
-        <a class="underlineHover" routerLink="/resetpass">Recuperar Contraseña</a>
-      </div>
-  
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <h6 class="d-flex justify-content-center title">Usuario</h6>
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <i class="fas fa-user icon icono"></i>
     </div>
+
+    <!-- Login Form -->
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <input type="text" id="correo" class="fadeIn second" formControlName="correo" placeholder="Usuario">
+      <input type="text" id="password" class="fadeIn third" formControlName="password" placeholder="Contraseña">
+      <input type="submit" class="fadeIn fourth" value="Ingresar">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" routerLink="/resetpass">Recuperar Contraseña</a>
+    </div>
+
   </div>
+</div>

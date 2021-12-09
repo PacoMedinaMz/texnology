@@ -14,9 +14,13 @@ const Model = mongoose.model("Empleado", {
 });
 
 app.get("/", (req, res) => {
-  res.status(200).json({
-    message: "Endpoints works.",
-  });
+  Model.find()
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((err) => {
+      res.status(400).json({ error: err.message });
+    });
 });
 
 /**

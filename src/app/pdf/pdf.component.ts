@@ -14,15 +14,14 @@ export class PdfComponent implements OnInit {
   constructor(private servicioPDF:ServicioPDFService) { 
     
   }
-  texto:string="61b2d3d3d55c0f38b238638e";
-  contenido:any;
-  bd:string="contrato";
-  
-  
+   
   ngOnInit(): void {
     
     
   }
+  texto:string="61b2d3d3d55c0f38b238638e";
+  contenido:any;
+  bd:string="contrato";
   result:any=[];
   generatePdf(){
     this.servicioPDF.getUsers(this.bd,this.texto).subscribe(data=>{

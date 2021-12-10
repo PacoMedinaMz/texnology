@@ -54,6 +54,14 @@ import { CrudtareasComponent } from './cruds/crudtareas/crudtareas.component';
 import { CrudusuarioComponent } from './cruds/crudusuario/crudusuario.component';
 import {Ng2SearchPipeModule} from 'ng2-search-filter';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import * as pdfFonts from "pdfmake/build/vfs_fonts";
+import {ServicioPDFService } from '../app/services/servicio-pdf.service';
+import { PdfComponent } from './pdf/pdf.component';
+import { PdfConvenioComponent } from './pdf-convenio/pdf-convenio.component';
+
+PdfMakeWrapper.setFonts(pdfFonts);
 @NgModule({
   declarations: [
     AppComponent,
@@ -82,7 +90,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
  CrudreunionComponent ,
  CrudrobotComponent ,
  CrudtareasComponent,
- CrudusuarioComponent
+ CrudusuarioComponent,
+ PdfComponent,
+    PdfConvenioComponent,
   ],
   imports: [
     RouterModule,
@@ -109,9 +119,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     ReactiveFormsModule,
     HttpClientModule,
     Ng2SearchPipeModule,
-    NgxChartsModule
+    NgxChartsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServicioPDFService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

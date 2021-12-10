@@ -3,6 +3,7 @@
         <div class="d-flex justify-content-center">
             <h2 style="color: #fff;">CRUD - DATOS</h2>
         </div>
+        <input [(ngModel)]="busqueda" (ngModelChange)="busqueda_por($event)" type="text" name="busqueda" id="">
         <table class="table table-dark table-hover">
             <thead>
                 <tr style="text-align: center;">
@@ -11,15 +12,19 @@
                     <th>Fecha Final</th>
                     <th>Mensajes Env.</th>
                     <th>Mensajes Rec.</th>
+                    <th>Id_robot</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="text-align: center;">
-                    <td>Datos</td>
-                    <td>Datos</td>
-                    <td>Datos</td>
-                    <td>Datos</td>
-                    <td>Datos</td>
+                <tr *ngFor="let dato of data" (click)="rellenar(dato._id,dato.FechaInicio,dato.FechaFinal,
+                dato.MsgEnviados,dato.MsgRecibidos,dato.IdRobot
+                )" style="text-align: center;">
+                    <td>{{dato._id}}</td>
+                    <td>{{dato.FechaInicio}}</td>
+                    <td>{{dato.FechaFinal}}</td>
+                    <td>{{dato.MsgEnviados}}</td>
+                    <td>{{dato.MsgRecibidos}}</td>
+                    <td>{{dato.IdRobot}}</td>
                 </tr>
 
             </tbody>
@@ -80,40 +85,45 @@
             <!-- ID -->
             <div class="mb-3">
                 <label for="ID" class="form-label">Id</label>
-                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+                <input [(ngModel)]="id" name="ID" type="text" class="form-control" id="ID" aria-describedby="Id">
             </div>
 
             <!-- DATO 1 -->
             <div class="mb-3">
                 <label for="datouno" class="form-label">Fecha Inicio</label>
-                <input type="text" class="form-control" id="datouno" aria-describedby="dato">
+                <input [(ngModel)]="obj.FechaInicio" name="feci" type="date" class="form-control" id="datouno" aria-describedby="dato">
             </div>
 
             <!-- DATO 2 -->
             <div class="mb-3">
                 <label for="datodos" class="form-label">Fecha Final
                 </label>
-                <input type="text" class="form-control" id="datodos">
+                <input [(ngModel)]="obj.FechaFinal" name="fecf" type="date" class="form-control" id="datodos">
             </div>
 
             <!-- DATO 3 -->
             <div class="mb-3">
                 <label for="datotres" class="form-label">Msg.Enviados
                 </label>
-                <input type="text" class="form-control" id="datotres">
+                <input [(ngModel)]="obj.MsgEnviados" name="msgenv" type="text" class="form-control" id="datotres">
             </div>
 
             <!-- DATO 4 -->
             <div class="mb-3">
                 <label for="datocuatro" class="form-label">Msg.Recibidos
                 </label>
-                <input type="text" class="form-control" id="datocuatro">
+                <input [(ngModel)]="obj.MsgRecibidos" name="msgrec" type="text" class="form-control" id="datocuatro">
+            </div>
+            <div class="mb-3">
+                <label for="datocuatro" class="form-label">IdRobot
+                </label>
+                <input [(ngModel)]="obj.IdRobot" name="idRobo" type="text" class="form-control" id="datocuatro">
             </div>
         </form>
 
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click'); insertar();">Guardar</button>
     </div>
 </ng-template>
 
@@ -131,14 +141,14 @@
             <!-- ID -->
             <div class="mb-3">
                 <label for="ID" class="form-label">Id</label>
-                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+                <input [(ngModel)]="id" name="id" type="text" class="form-control" id="ID" aria-describedby="Id">
             </div>
 
         </form>
 
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Borrar</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click');eliminar()">Borrar</button>
     </div>
 </ng-template>
 
@@ -156,40 +166,45 @@
             <!-- ID -->
             <div class="mb-3">
                 <label for="ID" class="form-label">Id</label>
-                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+                <input [(ngModel)]="id" name="id" type="text" class="form-control" id="ID" aria-describedby="Id">
             </div>
 
             <!-- DATO 1 -->
             <div class="mb-3">
                 <label for="datouno" class="form-label">Fecha Inicio</label>
-                <input type="text" class="form-control" id="datouno" aria-describedby="dato">
+                <input [(ngModel)]="obj.FechaInicio" name="feci" type="date" class="form-control" id="datouno" aria-describedby="dato">
             </div>
 
             <!-- DATO 2 -->
             <div class="mb-3">
                 <label for="datodos" class="form-label">Fecha Final
                 </label>
-                <input type="text" class="form-control" id="datodos">
+                <input [(ngModel)]="obj.FechaFinal" name="fecf" type="date" class="form-control" id="datodos">
             </div>
 
             <!-- DATO 3 -->
             <div class="mb-3">
                 <label for="datotres" class="form-label">Msg.Enviados
                 </label>
-                <input type="text" class="form-control" id="datotres">
+                <input [(ngModel)]="obj.MsgEnviados" name="msgenv" type="text" class="form-control" id="datotres">
             </div>
 
             <!-- DATO 4 -->
             <div class="mb-3">
                 <label for="datocuatro" class="form-label">Msg.Recibidos
                 </label>
-                <input type="text" class="form-control" id="datocuatro">
+                <input [(ngModel)]="obj.MsgRecibidos" name="msgrec" type="text" class="form-control" id="datocuatro">
+            </div>
+            <div class="mb-3">
+                <label for="datocuatro" class="form-label">IdRobot
+                </label>
+                <input [(ngModel)]="obj.IdRobot" name="idrobot" type="text" class="form-control" id="datocuatro">
             </div>
         </form>
 
     </div>
-    <!-- <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cambiar</button>
-    </div> -->
+     <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click'); actualizar()">Cambiar</button>
+    </div> 
 
 </ng-template>

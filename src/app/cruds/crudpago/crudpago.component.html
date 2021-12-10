@@ -3,6 +3,7 @@
         <div class="d-flex justify-content-center">
             <h2 style="color: #fff;">CRUD - PAGO</h2>
         </div>
+        <input [(ngModel)]="busqueda" (ngModelChange)="busqueda_por($event)" type="text" name="busqueda" id="">
         <table class="table table-dark table-hover">
             <thead>
                 <tr style="text-align: center;">
@@ -12,16 +13,19 @@
                     <th>Concepto</th>
                     <th>Banco</th>
                     <th>Cuenta</th>
+                    <th>idcontrato</th>
                 </tr>
             </thead>
             <tbody>
-                <tr style="text-align: center;">
-                    <td>Datos</td>
-                    <td>Datos</td>
-                    <td>Datos</td>
-                    <td>Datos</td>
-                    <td>Datos</td>
-                    <td>Datos</td>
+                <tr *ngFor="let dato of data" (click)="rellenar(dato._id,dato.Monto,dato.Fecha,dato.Concepto,dato.Banco
+                ,dato.Cuenta,dato.IdContrato)" style="text-align: center;">
+                    <td>{{dato._id}}</td>
+                    <td>{{dato.Monto}}</td>
+                    <td>{{dato.Fecha}}</td>
+                    <td>{{dato.Concepto}}</td>
+                    <td>{{dato.Banco}}</td>
+                    <td>{{dato.Cuenta}}</td>
+                    <td>{{dato.IdContrato}}</td>
                 </tr>
 
             </tbody>
@@ -82,47 +86,52 @@
             <!-- ID -->
             <div class="mb-3">
                 <label for="ID" class="form-label">Id</label>
-                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+                <input [(ngModel)]="id" name="ID" type="text" class="form-control" id="ID" aria-describedby="Id">
             </div>
 
             <!-- DATO 1 -->
             <div class="mb-3">
                 <label for="datouno" class="form-label">Monto</label>
-                <input type="text" class="form-control" id="datouno" aria-describedby="dato">
+                <input [(ngModel)]="obj.Monto" name="monto" type="text" class="form-control" id="datouno" aria-describedby="dato">
             </div>
 
             <!-- DATO 2 -->
             <div class="mb-3">
                 <label for="datodos" class="form-label">Fecha
                 </label>
-                <input type="text" class="form-control" id="datodos">
+                <input [(ngModel)]="obj.Fecha" name="fecha" type="date" class="form-control" id="datodos">
             </div>
 
             <!-- DATO 3 -->
             <div class="mb-3">
                 <label for="datotres" class="form-label">Concepto
                 </label>
-                <input type="text" class="form-control" id="datotres">
+                <input [(ngModel)]="obj.Concepto" name="concepto" type="text" class="form-control" id="datotres">
             </div>
 
             <!-- DATO 4 -->
             <div class="mb-3">
                 <label for="datocuatro" class="form-label">Banco
                 </label>
-                <input type="text" class="form-control" id="datocuatro">
+                <input [(ngModel)]="obj.Banco" name="banco" type="text" class="form-control" id="datocuatro">
             </div>
 
             <!-- DATO 5 -->
             <div class="mb-3">
                 <label for="datocinco" class="form-label">Cuenta
                 </label>
-                <input type="text" class="form-control" id="datocinco">
+                <input [(ngModel)]="obj.Cuenta" name="Cuenta" type="text" class="form-control" id="datocinco">
+            </div>
+            <div class="mb-3">
+                <label for="datocinco" class="form-label">idContrato
+                </label>
+                <input [(ngModel)]="obj.IdContrato" name="Contra" type="text" class="form-control" id="datocinco">
             </div>
         </form>
 
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Guardar</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click'); insertar();">Guardar</button>
     </div>
 </ng-template>
 
@@ -140,14 +149,14 @@
             <!-- ID -->
             <div class="mb-3">
                 <label for="ID" class="form-label">Id</label>
-                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+                <input [(ngModel)]="id" name="iD" type="text" class="form-control" id="ID" aria-describedby="Id">
             </div>
 
         </form>
 
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Borrar</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click'); eliminar();">Borrar</button>
     </div>
 </ng-template>
 
@@ -165,47 +174,52 @@
             <!-- ID -->
             <div class="mb-3">
                 <label for="ID" class="form-label">Id</label>
-                <input type="number" class="form-control" id="ID" aria-describedby="Id">
+                <input [(ngModel)]="id" name="id" type="text" class="form-control" id="ID" aria-describedby="Id">
             </div>
 
             <!-- DATO 1 -->
             <div class="mb-3">
                 <label for="datouno" class="form-label">Monto</label>
-                <input type="text" class="form-control" id="datouno" aria-describedby="dato">
+                <input [(ngModel)]="obj.Monto" name="monto" type="text" class="form-control" id="datouno" aria-describedby="dato">
             </div>
 
             <!-- DATO 2 -->
             <div class="mb-3">
                 <label for="datodos" class="form-label">Fecha
                 </label>
-                <input type="text" class="form-control" id="datodos">
+                <input [(ngModel)]="obj.Fecha" name="fecha" type="date" class="form-control" id="datodos">
             </div>
 
             <!-- DATO 3 -->
             <div class="mb-3">
                 <label for="datotres" class="form-label">Concepto
                 </label>
-                <input type="text" class="form-control" id="datotres">
+                <input [(ngModel)]="obj.Concepto" name="Concepto" type="text" class="form-control" id="datotres">
             </div>
 
             <!-- DATO 4 -->
             <div class="mb-3">
                 <label for="datocuatro" class="form-label">Banco
                 </label>
-                <input type="text" class="form-control" id="datocuatro">
+                <input [(ngModel)]="obj.Banco" name="banco" type="text" class="form-control" id="datocuatro">
             </div>
 
             <!-- DATO 5 -->
             <div class="mb-3">
                 <label for="datocinco" class="form-label">Cuenta
                 </label>
-                <input type="text" class="form-control" id="datocinco">
+                <input [(ngModel)]="obj.Cuenta" name="cuenta" type="text" class="form-control" id="datocinco">
+            </div>
+            <div class="mb-3">
+                <label for="datocinco" class="form-label">idcontrato
+                </label>
+                <input [(ngModel)]="obj.IdContrato" name="contrat" type="text" class="form-control" id="datocinco">
             </div>
         </form>
 
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Cambiar</button>
+        <button type="button" class="btn btn-outline-dark" (click)="c('Save click'); actualizar();">Cambiar</button>
     </div>
 
 </ng-template>

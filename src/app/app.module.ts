@@ -2,8 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import {ServicioPDFService } from '../app/services/servicio-pdf.service';
-import { HttpClientModule } from '@angular/common/http';
+
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -40,16 +39,21 @@ import { SigninempComponent } from './signinemp/signinemp.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChatComponent } from './chat/chat.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~CREAR PDFS ~~~~~~~~~~~~~~~~~~~~~~~~~ 
-import { PdfMakeWrapper } from 'pdfmake-wrapper';
-import * as pdfFonts from "pdfmake/build/vfs_fonts";
-import { PdfComponent } from './pdf/pdf.component';
-import { PdfConvenioComponent } from './pdf-convenio/pdf-convenio.component';
-
-PdfMakeWrapper.setFonts(pdfFonts);
-// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+import { HttpClientModule } from '@angular/common/http';
+import { CrudcontratoComponent } from './cruds/crudcontrato/crudcontrato.component';
+import { CrudconvenioComponent } from './cruds/crudconvenio/crudconvenio.component';
+import { CruddatosComponent } from './cruds/cruddatos/cruddatos.component';
+import { CrudempleadoComponent } from './cruds/crudempleado/crudempleado.component';
+import { CrudpagoComponent } from './cruds/crudpago/crudpago.component';
+import { CrudpaqueteComponent } from './cruds/crudpaquete/crudpaquete.component';
+import { CrudpuestoComponent } from './cruds/crudpuesto/crudpuesto.component';
+import { CrudreciboComponent } from './cruds/crudrecibo/crudrecibo.component';
+import { CrudreunionComponent } from './cruds/crudreunion/crudreunion.component';
+import { CrudrobotComponent } from './cruds/crudrobot/crudrobot.component';
+import { CrudtareasComponent } from './cruds/crudtareas/crudtareas.component';
+import { CrudusuarioComponent } from './cruds/crudusuario/crudusuario.component';
+import {Ng2SearchPipeModule} from 'ng2-search-filter';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,8 +71,18 @@ PdfMakeWrapper.setFonts(pdfFonts);
     IngresoComponent,
     SigninempComponent,
     ChatComponent,
-    PdfComponent,
-    PdfConvenioComponent,
+    CrudcontratoComponent,
+ CrudconvenioComponent ,
+ CruddatosComponent ,
+ CrudempleadoComponent ,
+ CrudpagoComponent ,
+ CrudpaqueteComponent ,
+ CrudpuestoComponent, 
+ CrudreciboComponent ,
+ CrudreunionComponent ,
+ CrudrobotComponent ,
+ CrudtareasComponent,
+ CrudusuarioComponent
   ],
   imports: [
     RouterModule,
@@ -92,9 +106,12 @@ PdfMakeWrapper.setFonts(pdfFonts);
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule, HttpClientModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    Ng2SearchPipeModule,
+    NgxChartsModule
   ],
-  providers: [ServicioPDFService],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -4,7 +4,55 @@
             <h2 style="color: #fff;">CRUD's</h2>
         </div>
         <p class="d-flex justify-content-center" style="color: #fff;">Área de gestión de datos</p>
+       <div style="background-color: honeydew;">
+        Numero paquetes contratados
+        <ngx-charts-advanced-pie-chart
+        [view]="view"
+        [scheme]="colorScheme"
+        [results]="single"
+        [gradient]="gradient"
+        (select)="onSelect($event)"
+        (activate)="onActivate($event)"
+        (deactivate)="onDeactivate($event)"
+        >
+      </ngx-charts-advanced-pie-chart>
+      <div >
+          ganancias en efectivo
+   <ngx-charts-bar-horizontal-stacked
+   style="color: white; "
+
+  [view]="view2"
+  [scheme]="colorScheme2"
+  [results]="multi"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-horizontal-stacked>
+</div>
+<ngx-charts-bar-vertical
+  [view]="view3"
+  [scheme]="colorScheme3"
+  [results]="triple"
+  [gradient]="gradient"
+  [xAxis]="showXAxis"
+  [yAxis]="showYAxis"
+  [legend]="showLegend"
+  [showXAxisLabel]="showXAxisLabel"
+  [showYAxisLabel]="showYAxisLabel"
+  [xAxisLabel]="xAxisLabel"
+  [yAxisLabel]="yAxisLabel"
+  (select)="onSelect($event)">
+</ngx-charts-bar-vertical>
+</div>
         <table class="table table-dark table-hover">
+
+           
             <!-- ACA ESTA LA TABLA DONDE VAN LOS DATOS -->
             <thead>
                 <tr style="text-align: center;">

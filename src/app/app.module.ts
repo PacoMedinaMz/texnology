@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-
+import {ServicioPDFService } from '../app/services/servicio-pdf.service';
+import { HttpClientModule } from '@angular/common/http';
 // MDB Modules
 import { MdbAccordionModule } from 'mdb-angular-ui-kit/accordion';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
@@ -40,6 +41,15 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChatComponent } from './chat/chat.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~CREAR PDFS ~~~~~~~~~~~~~~~~~~~~~~~~~ 
+import { PdfMakeWrapper } from 'pdfmake-wrapper';
+import * as pdfFonts from "pdfmake/build/vfs_fonts";
+import { PdfComponent } from './pdf/pdf.component';
+import { PdfConvenioComponent } from './pdf-convenio/pdf-convenio.component';
+
+PdfMakeWrapper.setFonts(pdfFonts);
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -57,6 +67,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     IngresoComponent,
     SigninempComponent,
     ChatComponent,
+    PdfComponent,
+    PdfConvenioComponent,
   ],
   imports: [
     RouterModule,
@@ -80,9 +92,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     NgbModule,
     FormsModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule, HttpClientModule
   ],
-  providers: [],
+  providers: [ServicioPDFService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

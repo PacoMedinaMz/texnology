@@ -1,0 +1,11 @@
+<div>
+    <div class="row">
+        <div class="col-6" style="color: aliceblue;">
+            Ingresa id a realizar reporte de contrato<input class="form-control" [(ngModel)]='texto' type="text" name="idContrato" id="">
+        </div>
+        <div class="col-6">
+            <button class="btn btn-success" (click)="generatePdf()">Generar PDF</button><p>{{texto}}</p>
+            <!-- <p>{{contenido}}</p> -->
+        </div>
+    </div>
+</div>
